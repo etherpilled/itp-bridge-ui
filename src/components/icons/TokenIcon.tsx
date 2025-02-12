@@ -4,7 +4,6 @@ import { isHttpsUrl, isRelativeUrl } from '@hyperlane-xyz/utils';
 import { Circle } from '@hyperlane-xyz/widgets';
 import { useState } from 'react';
 import { useStore } from '../../features/store';
-import ITPLogo from '../../../public/logo.svg';
 
 interface Props {
   token?: IToken | null;
@@ -28,7 +27,7 @@ export function TokenIcon({ token, size = 32 }: Props) {
     <Circle size={size} bgColorSeed={bgColorSeed} title={title}>
       {token?.symbol === 'ITP' ? (
         <img
-          src={ITPLogo}
+          src="/logo.svg"
           width={size}
           height={size}
           className="p-0.5"

@@ -4,7 +4,7 @@ import { isHttpsUrl, isRelativeUrl } from '@hyperlane-xyz/utils';
 import { Circle } from '@hyperlane-xyz/widgets';
 import { useState } from 'react';
 import { useStore } from '../../features/store';
-import ITPLogo from '../../.../public/logo.svg';
+import ITPLogo from '../../../public/logo.svg';
 
 interface Props {
   token?: IToken | null;

@@ -2,5 +2,22 @@
 # These configs will be merged with the warp routes in the configured registry
 # The input here is typically the output of the Hyperlane CLI warp deploy command
 ---
-tokens: []
+tokens:
+  - chainName: base
+    standard: EvmHypSynthetic
+    decimals: 18
+    symbol: ITP
+    name: Infinite Trading Protocol
+    addressOrDenom: "0xBA8CD87120aCA631F59231f9fD6c5469BbEE3440"
+    connections:
+      - token: ethereum|optimism|0xB231E9C3bC267Db389e3BF5d6aB26Ca078C6123B
+  - chainName: optimism
+    standard: EvmHypCollateral
+    decimals: 18
+    symbol: ITP
+    name: Infinite Trading Protocol
+    addressOrDenom: "0xB231E9C3bC267Db389e3BF5d6aB26Ca078C6123B"
+    collateralAddressOrDenom: "0x0a7B751FcDBBAA8BB988B9217ad5Fb5cfe7bf7A0"
+    connections:
+      - token: ethereum|base|0xBA8CD87120aCA631F59231f9fD6c5469BbEE3440
 options: {}

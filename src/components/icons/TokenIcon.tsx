@@ -4,6 +4,7 @@ import { isHttpsUrl, isRelativeUrl } from '@hyperlane-xyz/utils';
 import { Circle } from '@hyperlane-xyz/widgets';
 import { useState } from 'react';
 import { useStore } from '../../features/store';
+import ITPLogo from '../../.../public/logo.svg';
 
 interface Props {
   token?: IToken | null;
@@ -25,7 +26,15 @@ export function TokenIcon({ token, size = 32 }: Props) {
 
   return (
     <Circle size={size} bgColorSeed={bgColorSeed} title={title}>
-      {imageSrc && !fallbackToText ? (
+      {token?.symbol === 'ITP' ? (
+        <img
+          src={ITPLogo}
+          width={size}
+          height={size}
+          className="p-0.5"
+          onError={() => setFallbackToText(true)}
+        />
+      ) : imageSrc && !fallbackToText ? (
         <img
           src={imageSrc}
           width={size}
@@ -39,6 +48,7 @@ export function TokenIcon({ token, size = 32 }: Props) {
     </Circle>
   );
 }
+
 
 function getImageSrc(registry: IRegistry, token?: IToken | null) {
   if (!token?.logoURI) return null;

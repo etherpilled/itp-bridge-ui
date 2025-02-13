@@ -18,6 +18,7 @@ export function TokenIcon({ token, size = 32 }: Props) {
   const [fallbackToText, setFallbackToText] = useState(false);
   const registry = useStore((s) => s.registry);
   const imageSrc = getImageSrc(registry, token);
+  let bgColorSeed;
   if (token?.symbol === 'ITP') {
     bgColorSeed = '#bca7f8';
   } else {

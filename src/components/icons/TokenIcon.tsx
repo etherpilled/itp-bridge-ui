@@ -24,7 +24,7 @@ export function TokenIcon({ token, size = 32 }: Props) {
       : undefined;
 
   return (
-    <Circle size={size} title={title}>
+    <Circle size={size} bgColorSeed={bgColorSeed} title={title}>
       {token?.symbol === 'ITP' ? (
         <img
           src="/logo.svg"
